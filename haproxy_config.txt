@@ -53,10 +53,10 @@ defaults
 frontend  main 
     bind*:80
  	
-	acl url_app_ivts path_beg App_path
+	acl url_app_name path_beg App_path
 	acl url_haproxy path_beg /haproxy?stats	
 
-	use_backend app_admin1 if url_app_ivts
+	use_backend app_admin1 if url_app_name
 	use_backend app_haproxy if url_haproxy
 
 ## if you require CORS filer at haproxy level uncomment the below lines	
